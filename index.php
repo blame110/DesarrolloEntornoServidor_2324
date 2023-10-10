@@ -10,9 +10,7 @@ ESTE FICHERO ESTA EN EL DIRECTORIO
 
 <?php
 
-
 $edad = 23;
-
 $edad = "treinta y cinco";
 
 echo "aleatorio ".random_int(23,28);
