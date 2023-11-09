@@ -1,5 +1,10 @@
 <?php 
 
+
+include_once ("ejemplo9Funciones.php");
+
+echo suma(8+8);
+
 $texto= "En españa se vive muy bien, aupa españa";
 $num_reemp=0;
 

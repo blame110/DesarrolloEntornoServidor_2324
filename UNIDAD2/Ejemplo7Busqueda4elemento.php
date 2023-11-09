@@ -2,6 +2,12 @@
 
 $texto="En este gran dia nos encontramos un dia soleado pero a la vez es un dia ventoso porque hace mucho levante este dia";
 
+$letras = str_split($texto);
+
+$canLetras = array_count_values($letras);
+
+//var_dump($letras);
+var_dump($canLetras);
 //str_word_count nos cuenta todas las palabras que hay en un texto
 $num_palabras = str_word_count($texto);
 echo "En el texto hay $num_palabras palabras <br/>";
