@@ -1,0 +1,28 @@
+S1-HOME-BLANCO-HTTPT
+S2-PRODUCTOS-BLANCO-HTTP:/...
+S3-CONTACTO-NEGRO-HTTP:/...
+I1-ACERCA DE-BLANCO-HTT
+I2-ENLACES-BLANCO-HTTP..
+
+<OL>
+<LI><A HREF=HTTP..>HOME</A></LI>
+...
+</OL>
+//menu es un array de hacer un explode con "-" de cada linea
+
+//Codigo dentro de un bucle que recorre todas las lineabstract protected static function 
+//para cada linea se hace un explode del menu
+
+$liMenu["texto"]=$menu[1];
+$liMenu["color"]=$menu[2];
+$liMenu["url"]=$menu[3];
+
+if ($menu[0][0]=="S")
+{
+$menuSuperior[$menu[0][1]-1]=$liMenu;
+}
+else
+{
+$menuInferior[$menu[0][1]-1]=$liMenu;
+}
+

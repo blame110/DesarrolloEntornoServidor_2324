@@ -78,7 +78,7 @@ function cumpleDomicilio($textoJugad, $num_jugadores, $categoria)
             $edadmas40 = false;
 
         //Comprobamos las edades de los jugadores para veteranos
-        if ($datosJ[4] < 180 && $datosJ[2]=="P")
+        if ($datosJ[4] < 180 && $datosJ[2] == "P")
             $pivotOK = false;
     }
     //Todos los jugadores están federados, excepto si son veteranos
@@ -89,27 +89,40 @@ function cumpleDomicilio($textoJugad, $num_jugadores, $categoria)
 
 
     //Si la categoría es alevín deben de estar entre 8 y 11 años todos los jugadores
-    if ($categoria=="alevin" && $edadAlevin==true)
+    if ($categoria == "alevin" && $edadAlevin == true)
         $resultado["alevinOK"] = true;
     else
         $resultado["alevinOK"] = false;
 
     //Si la categoría es veteranos deben de tener mas de 40 años todos los jugadores
-    if ($categoria=="veteranos" && $edadmas40==true)
+    if ($categoria == "veteranos" && $edadmas40 == true)
         $resultado["veteranosOK"] = true;
     else
         $resultado["veteranosOK"] = false;
 
-        //Los pivots menores de 180 cm tambien se añaden
-        $resultado["pivotOK"]=$pivotOK;
-    
+    //Los pivots menores de 180 cm tambien se añaden
+    $resultado["pivotOK"] = $pivotOK;
+
     //Devolvemos el array asociativo
     return $resultado;
-
 }
 
 //var_dump($_POST);
 
-$res=cumpleDomicilio($_POST['txtJugadores'], $_POST['numJug'], $_POST['categoria']);
+$res = cumpleDomicilio($_POST['txtJugadores'], $_POST['numJug'], $_POST['categoria']);
+
 
 var_dump($res);
+
+?>
+
+
+<p style='color:<?php
+
+                if ($res["numJugCorrecto"])
+                    echo "green";
+                else
+                    echo "red";
+                ?>'>
+    Num Jugadores correcto
+</p>
