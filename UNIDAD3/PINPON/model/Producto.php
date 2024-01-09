@@ -20,7 +20,7 @@ class Producto
          * 
          * select * from productos where [filtros] order by [orden] limit [num_prod] start [num_pag*num_prod]
          * 
-         * select * from productos where precio between 30 and 80 order by precio desc limit 10 start [4*10+1]
+         * select * from productos where precio between 30 and 80 order by precio desc limit 10 start [(4-1)*10+1]
          * 
          */
         select *
