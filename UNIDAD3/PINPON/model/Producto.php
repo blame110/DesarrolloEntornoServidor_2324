@@ -23,7 +23,7 @@ class Producto
          * select * from productos where precio between 30 and 80 order by precio desc limit 10 start [(4-1)*10+1]
          * 
          */
-        select *
+       
 
     }
     
