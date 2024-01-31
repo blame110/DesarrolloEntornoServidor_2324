@@ -17,11 +17,8 @@ use Illuminate\Support\Facades\Route;
 // returns the home page with all Beds
 Route::get('/', BedsController::class .'@index')->name('beds.index');
 
-// returns the form for adding a Bed
-Route::get('/beds/create', BedsController::class . '@create')->name('beds.create');
-
-// adds a Bed to the database
-Route::post('/beds', BedsController::class .'@store')->name('beds.store');
+// deletes a BedsController
+Route::delete('/beds/{bed}', BedsController::class .'@destroy')->name('beds.destroy');
 
 // returns a page that shows a full BedsController
 Route::get('/beds/{bed}', BedsController::class .'@show')->name('beds.show');
@@ -32,5 +29,10 @@ Route::get('/beds/{bed}/edit', BedsController::class .'@edit')->name('beds.edit'
 // updates a BedsController
 Route::put('/beds/{bed}', BedsController::class .'@update')->name('beds.update');
 
-// deletes a BedsController
-Route::delete('/beds/{bed}', BedsController::class .'@destroy')->name('beds.destroy');
+// returns the form for adding a Bed
+Route::get('/beds/create', BedsController::class . '@create')->name('beds.create');
+
+// adds a Bed to the database is post because the form has the data
+Route::post('/beds', BedsController::class .'@store')->name('beds.store');
+
+

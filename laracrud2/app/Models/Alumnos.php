@@ -5,14 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Beds extends Model
+class Alumnos extends Model
 {
     use HasFactory;
 
-    //Hay que definir los campos de BD
     protected $fillable = [
-        'marca',
-        'modelo',
-        'peso',
+        'id',
+        'nombre',
+        'apellidos',
+        'edad',
+        'nota',
+        'descripcion'
     ];
 }
