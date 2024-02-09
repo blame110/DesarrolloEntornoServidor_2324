@@ -21,7 +21,7 @@ if (!isset($listaPaises) || !isset($listaProvincias))
     <form action="../controller/listarDirecciones.php" method="post">
         Provincias:
         <select  name=provincia>
-            <option value=-1>Todas</option>
+            <option value=-1  default>Todas</option>
         <?php 
          foreach ($listaProvincias as $provincia){
             echo "<option value=".$provincia['id'].">".$provincia['nombre']."</option>";
@@ -32,8 +32,7 @@ if (!isset($listaPaises) || !isset($listaProvincias))
 
         Paises:
         <select name=pais>
-        <option value=-1>Todos</option>
-    
+        <option value=-1 default>Todos</option>
         <?php 
          foreach ($listaPaises as $pais){
             echo "<option value=".$pais['id'].">".$pais['nombre']."</option>";
@@ -44,7 +43,19 @@ if (!isset($listaPaises) || !isset($listaProvincias))
         <button type=submit>Cargar</button>
     </form>
 
+<?php 
 
+if (isset($listaDir))
+{
+    foreach( $listaDir as $direccion)
+    {
+        //dir['nombre']
+    }
+
+
+    
+}
+?>
 
 
 </body>
