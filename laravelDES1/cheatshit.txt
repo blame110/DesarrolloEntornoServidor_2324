@@ -1,0 +1,22 @@
+INSTALACION LARAVEL
+(Necesitamos composer y npm (nodejs)instalado)
+
+//Instalar dependencias de installador de laravel
+composer global require laravel/installer
+
+//Instalacion de un nuevo laravel (crea el directorio)
+laravel new <nombre_directorio>
+
+//Version de laravel
+php artisan --version
+
+//Crear modelo o controlador
+php artisan make:model <nombre_modelo>
+php artisan make:controller <nombre_controller>
+
+//Configuracion db
+editar fichero .env
+
+Creaccion de tablas
+php artisan make:migration create_<nombre_tabla>_table
+
