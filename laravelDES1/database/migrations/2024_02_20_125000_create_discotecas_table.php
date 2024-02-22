@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('discoteca', function (Blueprint $table) {
+        Schema::create('discotecas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('nombre');
@@ -20,7 +20,7 @@ return new class extends Migration
             //campo para la clave externa
             $table->unsignedBigInteger('gerente_id');
             //definicion de clave externa
-            $table->foreign('gerente_id')->references('id')->on('gerente');
+            $table->foreign('gerente_id')->references('id')->on('gerentes');
         });
     }
 

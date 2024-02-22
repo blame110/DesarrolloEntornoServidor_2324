@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gerente', function (Blueprint $table) {
+        Schema::create('gerentes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('nombre');
             $table->integer('edad');
-            $table->decimal('sueldo', 5, 2);
+            $table->integer('sueldo');
             $table->date('fchNacimiento');
         });
     }
