@@ -29,6 +29,9 @@ Route::get('/prueba',[discotecaController::class,'pruebasModelo']);
 //Ruta principal
 Route::get('/', discotecaController::class . '@index')->name('discoteca.index');
 
+//Ruta que con el id de discoteca carga los datos y se los pasa al formulario de edicino
+Route::get('/discoteca/{id}/edit', discotecaController::class . '@edit')->name('discoteca.edit');
+
 //Ruta para cargar la vista de creaccion
 Route::get('/discoteca/create', discotecaController::class . '@create')->name('discoteca.create');
 
@@ -36,16 +39,14 @@ Route::get('/discoteca/create', discotecaController::class . '@create')->name('d
 Route::post('/discoteca', discotecaController::class . '@store')->name('discoteca.store');
 
 //Ruta para que muestre los datos de una discoteque
-Route::get('/discoteca/{$id}', discotecaController::class . '@show')->name('discoteca.show');
+Route::get('/discoteca/{id}', discotecaController::class . '@show')->name('discoteca.show');
 
-//Ruta que con el id de discoteca carga los datos y se los pasa al formulario de edicino
-Route::get('/discoteca/{$id}/edit', discotecaController::class . '@edit')->name('discoteca.edit');
 
 //Ruta que guarda datos en la bd
-Route::put('/discoteca/{$id}', discotecaController::class . '@update')->name('discoteca.update');
+Route::put('/discoteca/{id}', discotecaController::class . '@update')->name('discoteca.update');
 
 //Eliminamos la discoteca con id que recibe
-Route::delete('/discoteca/{$id}', discotecaController::class . '@destroy')->name('discoteca.destroy');
+Route::delete('/discoteca/{id}', discotecaController::class . '@destroy')->name('discoteca.destroy');
 
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\discoteca;
+use App\Models\gerente;
 use Illuminate\Http\Request;
 
 class discotecaController extends Controller
@@ -16,7 +17,7 @@ class discotecaController extends Controller
         $discotecas = discoteca::all();
 
         //Cargamos la vista indice con los datos
-        return view('discotecas.index',compact('discotecas'));
+        return view('discoteca.index',compact('discotecas'));
 
     }
 
@@ -48,7 +49,10 @@ class discotecaController extends Controller
     public function edit($id)
     {
         $discoteca = discoteca::find($id);
-        return view('discoteca.edit', compact('discoteca'));
+        $gerentes = gerente::all();
+
+    
+        return view('discoteca.edit', compact('discoteca','gerentes'));
     }
 
     /**
@@ -80,7 +84,7 @@ class discotecaController extends Controller
             //modificamos los datos en bd
             $discoteca->update($request->all());
 
-            return redirect()->route('discoteca.index')
+            return redirect()->route('discotecas.index')
             ->witch('success','Modificación realizada');
 
     }

@@ -23,6 +23,6 @@ class discoteca extends Model
     //Un único gerente
     public function gerente()
     {
-        return $this->belongsTo(gerente::class);
+        return $this->belongsTo(gerente::class,'id','gerente_id');
     }
 }

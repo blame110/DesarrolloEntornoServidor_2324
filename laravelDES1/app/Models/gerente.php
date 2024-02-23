@@ -21,9 +21,9 @@ class gerente extends Model
     //Para poder sacar las discotecas asociadas a este gerente
     //hay que crear este metodo con el cual especificamos que este modelo
     //tiene muchos registros de la otra entidad
-    public function discotecas()
+    /*public function discotecas()
     {
         return $this->hasMany(discoteca::class);
-    }
+    }*/
 
 }
